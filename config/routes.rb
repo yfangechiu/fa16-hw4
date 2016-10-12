@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  get '/', to: 'pages#home'
+  # get '/cats/new_cats', to: 'pages#new_cats'
+  # get '/users/new_users', to: 'pages#new_users'
+  # get '/todos/new_todos', to: 'pages#new_todos'
+
+  # post 'cats/create_cats', to: 'pages#create_cats'
+  # post 'users/create_users', to: 'pages#create_users'
+  # post 'todos/create_todos', to: 'pages#create_todos'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
