@@ -1,0 +1,51 @@
+Lec 5: Associations
+
+Rows: instance
+Columns: attribute
+
+Create and update models using migrations
+
+Association: connection between two models.
+
+Types of associations:
+1. belongs_to -- instance belpongs to one instance of another model
+2. has_one -- this mondel contains one instance of another model
+3. has_many -- this model contains x amount of instances of another model; corresponds to belongs_to.
+4. has_one :through -- can be matched with 1 instance of another model through a third model
+5. has_many :through -- can be matched to x amount of instances of another model through a third model
+6. has_and_belongs_to_many -- can be matched to x amount of instances of another model and vice versa
+
+Ex: 
+class Book < ApplicationRecord
+	belongs_to :author
+end
+
+**associated model must be singular for belongs_to
+**associated model must be plural for has_many
+
+Foreign keys are used with belongs_to and identifies which instance another instance belongs to and it is an additional column in a model.
+Naming convention of foreign_key: <associated_modl>_id, so like t.integer :teacher_id
+
+Validations:
+Syntax:
+#used to validate several columns and throws an error if there are blanks: validates_presence_of :attr_!, :attr_2, ... OR 
+validates :attr, presence: true, uniqueness: true
+
+In controller, we can:
+def create
+	@user = User.create(params:[user])
+	puts @user.admin
+end
+
+Strong parameters:
+Define in Controller, such as UsersController:
+def user_params
+	params.require(:user).permit(:name)
+end
+
+form_for generates an html
+
+
+User.all to see what is in your table!!!
+
+

@@ -1,0 +1,12 @@
+<%= form_tag users_create_users_path do %>
+  <%= label_tag(:username, "username: ") %>
+  <%= text_field_tag(:user) %>
+
+  <%= label_tag(:email, "email: ") %>
+  <%= text_field_tag(:user) %>
+
+  <%= label_tag(:age, "age: ") %>
+  <%= text_field_tag(:user) %>
+
+  <%= submit_tag("Create User") %>
+<% end %>

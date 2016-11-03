@@ -1,0 +1,9 @@
+<%= form_tag todos_create_todos_path do %>
+  <%= label_tag(:tasks, "tasks: ") %>
+  <%= text_field_tag(:todo) %>
+
+  <%= label_tag(:finished, "finished: ") %>
+  <%= text_field_tag(:todo) %>
+
+  <%= submit_tag("Create Todo") %>
+<% end %>
